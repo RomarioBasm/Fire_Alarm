@@ -9,7 +9,10 @@ package fire.occurence;
  * @author sara
  */
 public class FireOccurenceList {
+
     private FireOccurenceNode head;
+    private String recordFileDirectory;
+    File file;
 
     FireOccurenceList(){
 	head=null;
@@ -72,5 +75,20 @@ public class FireOccurenceList {
 
     }
 
+    public void setRecordFileDirectory(String fileDirectory){
+       
+    }
+
+    public String getHistoryContent(){
+
+    }
+
+    public void recordData() {
+    
+    }
+
+    public void openHistory(){
+
+    }
 
 }
