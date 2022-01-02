@@ -6,8 +6,40 @@ package fire.occurence;
 
 /**
  *
- * @author Romario
+ * @author sara
  */
 public class FireOccurenceNode {
+
+    private int fireId;
+    FireOccurenceNode nextFireOccurence;
+    private String fireOccurenceDate;
+    private String fireOccurenceTime;
+    static int TotalFireOccurences = 0;
+
+    FireOccurenceNode(){
+
+    }
+
+    FireOccurenceNode(int id){
+
+    }
+
+    public void setFireId(int id){
+        fireId =id;
+    }
+
+    public int getFireId(){
+       return fireId;
+    }
+
+    public String getFireOccurenceDate(){
+       return fireOccurenceDate;
+    }
+
+    public String getFireOccurenceTime(){
+       return fireOccurenceTime;
+    }
+
+
     
 }
