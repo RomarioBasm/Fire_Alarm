@@ -70,9 +70,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
       -fx-background-size: stretch;
 }
 .AnchorPane{
-    
-    -fx-background-image:url("/javaproject_1/test1.jpg");
-    //-fx-background-color: black;
+    -fx-background-color: black;
     -fx-background-size: stretch;
 }
 .history_tab{

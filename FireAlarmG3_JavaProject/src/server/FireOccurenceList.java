@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package fire.occurence;
+package server;
 
 /**
  *
@@ -125,7 +125,7 @@ public class FireOccurenceList {
 
     }
     
-    }
+    
 
     public void openHistory() throws IOException{
         Desktop recordHistoryTextFile=Desktop.getDesktop();
