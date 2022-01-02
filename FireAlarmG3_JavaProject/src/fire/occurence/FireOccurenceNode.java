@@ -8,6 +8,10 @@ package fire.occurence;
  *
  * @author sara
  */
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class FireOccurenceNode {
 
     private int fireId;
@@ -18,10 +22,23 @@ public class FireOccurenceNode {
 
     FireOccurenceNode(){
 
+	this.fireId = 1000;
+        Date currentDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/Y");
+        this.fireOccurenceDate = dateFormat.format(currentDate);
+        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss a");
+        this.fireOccurenceTime = timeFormat.format(currentDate);
+        this.nextFireOccurence=null;
     }
 
     FireOccurenceNode(int id){
-
+       this.fireId=id;
+        Date currentDate=new Date();
+        SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/Y");
+        this.fireOccurenceDate=dateFormat.format(currentDate);
+        SimpleDateFormat timeFormat=new SimpleDateFormat("hh:mm:ss a");
+        this.fireOccurenceTime=timeFormat.format(currentDate);
+        this.nextFireOccurence=null;
     }
 
     public void setFireId(int id){
