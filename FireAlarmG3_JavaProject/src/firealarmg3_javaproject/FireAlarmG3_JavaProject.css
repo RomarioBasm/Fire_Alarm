@@ -7,3 +7,74 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Author     : Romario
 */
 
+.help
+{
+      -fx-border-color:  red;
+      -fx-border-radius:  50 50 50 50;
+      -fx-border-style: solid ;
+      -fx-border-width: 8;
+      -fx-background-color:  transparent;
+      -fx-background-radius: 50 50 50 50; 
+      -fx-background-size: auto ;
+}
+.help:hover
+{
+      -fx-border-color: yellow;
+      -fx-border-radius:  50 50 50 50;
+      -fx-border-style: solid ;
+      -fx-border-width: 8;
+      -fx-background-color:  transparent;
+      -fx-background-radius: 50 50 50 50; 
+      -fx-background-size: auto;
+      
+}
+.help:pressed
+{
+      -fx-border-color:   red;
+      -fx-border-radius:  50 50 50 50;
+      -fx-border-style: solid ;
+      -fx-border-width: 8;
+      -fx-background-color:  transparent;
+      -fx-background-radius: 50 50 50 50; 
+      -fx-background-size: auto;
+}
+
+.history
+{
+      -fx-border-color:darkorange ;
+      -fx-border-radius:  50 50 50 50; 
+      -fx-border-style: solid ;
+      -fx-border-width: 8;
+      -fx-background-color:  transparent;
+      -fx-background-radius: 50 50 50 50; 
+      -fx-background-size: stretch;
+}
+.history:hover
+{
+      -fx-border-color:  yellow;
+      -fx-border-radius:  50 50 50 50;
+      -fx-border-style: solid ;
+      -fx-border-width: 8;
+      -fx-background-color:  transparent;
+      -fx-background-radius: 50 50 50 50;      
+      -fx-background-size: stretch;
+}
+.history:pressed
+{
+      -fx-border-color: darkorange;
+      -fx-border-radius:  50 50 50 50;
+      -fx-border-style: solid ;
+      -fx-border-width: 8;
+      -fx-background-color:  transparent;
+      -fx-background-radius: 50 50 50 50; 
+      -fx-background-size: stretch;
+}
+.AnchorPane{
+    
+    -fx-background-image:url("/javaproject_1/test1.jpg");
+    //-fx-background-color: black;
+    -fx-background-size: stretch;
+}
+.history_tab{
+    -fx-display: none;
+}

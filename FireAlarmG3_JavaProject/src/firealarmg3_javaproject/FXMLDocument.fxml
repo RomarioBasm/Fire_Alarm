@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import eu.hansolo.medusa.Gauge?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="firealarmg3_javaproject.FXMLDocumentController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
-</AnchorPane>
+<TabPane fx:id="tabpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="855.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="firealarmg3_javaproject.FXMLDocumentController">
+   <tabs>
+      <Tab fx:id="tab1" text="DashBoard">
+         <content>
+            <AnchorPane id="AnchorPane" fx:id="A1" prefHeight="579.0" prefWidth="869.0" styleClass="AnchorPane" stylesheets="@FireAlarmG3_JavaProject.css">
+               <children>
+                  <Gauge id="thermometer" fx:id="thermometer" alert="true" alertMessage="WARNING !!" animated="true" areaTextVisible="true" backgroundPaint="WHITE" borderPaint="#90818100" foregroundPaint="#47313100" gradientBarEnabled="true" layoutX="307.0" layoutY="129.0" lcdDesign="BLACK" lcdFont="LCD" ledVisible="true" mediumTickMarkType="PILL" prefHeight="258.0" prefWidth="255.0" styleClass="thermometer" threshold="25.0" thresholdColor="#ff0000" thresholdVisible="true" title="Temperature" unit="  ̊C" />
+                  <Text fill="#ff0505" layoutX="21.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fire Alarm" wrappingWidth="185.388671875">
+                     <font>
+                        <Font name="Arial" size="40.0" />
+                     </font>
+                  </Text>
+                  <VBox layoutX="150.0" layoutY="319.0" prefHeight="247.0" prefWidth="157.0" />
+                  <Button id="help" fx:id="help" layoutX="670.0" layoutY="407.0" mnemonicParsing="false" onAction="#handleHelpAction" prefHeight="71.0" prefWidth="165.0" styleClass="help" stylesheets="@FireAlarmG3_JavaProject.css" text="HELP" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="30.0" />
+                     </font>
+                     <effect>
+                        <Glow level="1.0" />
+                     </effect>
+                  </Button>
+                  <Button id="history" fx:id="history" layoutX="670.0" layoutY="485.0" mnemonicParsing="false" onAction="#handleHistoryAction" styleClass="history" stylesheets="@FireAlarmG3_JavaProject.css" text="HISTORY" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="30.0" />
+                     </font>
+                     <effect>
+                        <Glow level="1.0" />
+                     </effect>
+                  </Button>
+                  <Label fx:id="label" layoutX="629.0" layoutY="311.0" prefHeight="37.0" prefWidth="140.0" textFill="#fcfcfc" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="tab2" text="History">
+         <content>
+            <AnchorPane id="history_tab" fx:id="A2" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="history_tab" stylesheets="@../../../../JavaProject_1/src/javaproject_1/proj1.css" visible="false" />
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>

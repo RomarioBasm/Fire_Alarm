@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package emailPackage;
+package communication;
 
 /**
  *
@@ -25,7 +25,7 @@ public class EmailClass {
     
     
 	/**
-	 * Utility method to send simple HTML email
+	 * sendEmail method to send simple HTML email
 	 * @param toEmail
 	 * @param body
 	 */
