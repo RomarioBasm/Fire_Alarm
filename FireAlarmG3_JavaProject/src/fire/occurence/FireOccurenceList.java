@@ -8,6 +8,10 @@ package fire.occurence;
  *
  * @author sara
  */
+
+import java.awt.Desktop;
+import java.io.*;
+
 public class FireOccurenceList {
 
     private FireOccurenceNode head;
@@ -75,20 +79,57 @@ public class FireOccurenceList {
 
     }
 
-    public void setRecordFileDirectory(String fileDirectory){
-       
+    public void setRecordFileDirectory(String fileDirectory) throws FileNotFoundException{
+        recordFileDirectory= fileDirectory;
+        this.file=new File(recordFileDirectory);
     }
 
     public String getHistoryContent(){
 
+        String recordfileContents="";        
+        FireOccurenceNode node=head;
+        if(node==null){
+            System.out.println("no fires occured");
+        }
+
+       while(node.nextFireOccurence !=null){
+            recordfileContents.concat("fireID:"+node.getFireId()+"\t fireDate:"+
+            node.getFireOccurenceDate()+"\t fireTime:"+
+            node.getFireOccurenceTime());
+            node=node.nextFireOccurence;
+        }
+        recordfileContents.concat("fireID:"+node.getFireId()+"\t fireDate:"+
+        node.getFireOccurenceDate()+"\t fireTime:"+node.getFireOccurenceTime());
+         return  recordfileContents;   
     }
 
-    public void recordData() {
+    public void recordData() throws IOException{
+    	FileWriter writer=new FileWriter(recordFileDirectory);
+    	String recordfileContents="";        
+        FireOccurenceNode node=head;
+        if(node==null){
+            System.out.println("no fires occured");
+        }
+
+       while(node.nextFireOccurence !=null){
+            recordfileContents.concat("fireID:"+node.getFireId()+"\t fireDate:"+
+            node.getFireOccurenceDate()+"\t fireTime:"+
+            node.getFireOccurenceTime());
+            node=node.nextFireOccurence;
+
+        }
+        recordfileContents.concat("fireID:"+node.getFireId()+"\t fireDate:"+
+        node.getFireOccurenceDate()+"\t fireTime:"+node.getFireOccurenceTime());
+        writer.write(recordfileContents);
+        writer.close();
+
+    }
     
     }
 
-    public void openHistory(){
-
+    public void openHistory() throws IOException{
+        Desktop recordHistoryTextFile=Desktop.getDesktop();
+        recordHistoryTextFile.open(file);
     }
 
 }
