@@ -8,6 +8,7 @@ public class SerialProtocol {
     static int temper;       // int variable that represent the 
     static SerialPort port;  // serialPort, that represent the port.
     
+    
     /********************** arduinoConnection  **********************
     * This method create a new connection between the hardware and -*
     * the software -------------------------------------------------*
@@ -27,6 +28,33 @@ public class SerialProtocol {
         port.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         in = new Scanner(port.getInputStream());
         port.openPort();
+    }
+    
+    
+    /************************* receive  *****************************
+    * This method always run immediately, whether or not the -------*
+    * fire exists. to receive a data from the hardware -------------*
+    * @param                                                        *
+    * @return                                                       *
+    ****************************************************************/
+    public void receive() {
+        Thread t2 = new Thread(new Runnable(){
+           @Override
+           public void run() {
+                    try{
+                        System.out.println("Hello");
+                    }catch(Exception e){}                
+                   
+                    while (in.hasNextLine()) {//in.hasNextLine()
+                        try {
+                           temper = Integer.parseInt(in.nextLine());
+                           //System.out.println(temper);
+                           Thread.sleep(50);
+                        } catch (Exception e) {}
+                    }               
+            }
+        });
+        t2.start();
     }
     
     
