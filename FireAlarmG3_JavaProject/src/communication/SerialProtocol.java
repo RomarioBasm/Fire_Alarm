@@ -41,20 +41,49 @@ public class SerialProtocol {
         Thread t2 = new Thread(new Runnable(){
            @Override
            public void run() {
-                    try{
-                        System.out.println("Hello");
-                    }catch(Exception e){}                
+               
+               try{
+                   System.out.println("Hello");
+                   }
+               catch(Exception e){}                
                    
-                    while (in.hasNextLine()) {//in.hasNextLine()
-                        try {
-                           temper = Integer.parseInt(in.nextLine());
-                           //System.out.println(temper);
-                           Thread.sleep(50);
-                        } catch (Exception e) {}
-                    }               
+                while (in.hasNextLine()) {//in.hasNextLine()
+                    try {
+                       temper = Integer.parseInt(in.nextLine());
+                       //System.out.println(temper);
+                       Thread.sleep(50);
+                    }
+                    catch (Exception e) {}
+                }               
             }
         });
         t2.start();
+    }
+    
+    /************************** send ********************************
+    * This method run , to send a data to the hardware from --------*
+    * the software -------------------------------------------------*
+    * @param data                                                       *
+    * @return                                                       *
+    ****************************************************************/
+    public void send(int data) {
+        Thread t1 = new Thread() {
+            @Override
+            public void run() {
+               try {
+                    Thread.sleep(1000);
+                } 
+                catch (Exception e) {}
+                
+                out = port.getOutputStream();
+                try {
+                     out.write(data);
+                }
+                catch (Exception e) {
+                }
+            }
+        };
+        t1.start();
     }
     
     
