@@ -9,8 +9,7 @@ import java.util.logging.Logger;
  
 public class Server 
 {
-  
- /******************************************** Con-Server() ************************************************
+  /******************************************** Con-Server() ************************************************
   * This constructor is called once the file contains its class is run, it contains an object ------------ *
   * that makes a network internal socket to the main application that enables a session to be ------------ *
   * opened between the server side and the client side (GUI) --------------------------------------------- *
@@ -20,18 +19,22 @@ public class Server
   @param
   @return
   **********************************************************************************************************/
-   public Server() throws IOException{
-            ServerSocket ser = new ServerSocket(50005);                              // make new socket for Server of main application with internal port number (50005)
-            while(true){                                                             // to accept clients as many as Guis could be created
+   Server() throws IOException
+   {
+            ServerSocket ser = new ServerSocket(5005);									// make new socket for Server of main application with internal port number (50005)
+            while(true)                                                                 // to accept clients as many as Guis could be created
+			{
+				System.out.println("i am server");                                      // for debugging and tracing info.
                 try{
                 Socket s = ser.accept();
-                new ClientHandler(s);}                                               // this line is to preserve new client objects created to avoid data loss
-            catch(IOException ex){
+                new ClientHandler(s);													// this line is to preserve new client objects created to avoid data loss
+                }
+                catch(IOException ex){
                 Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);                
                 }               
             }
-      }
-   
+    }
+
   /******************************************** main() *****************************************************
   * This is the main entry point/ function from where it creates a Server object so that the main -------- *
   * application could have a server that can store data and history and provide it at any given time ----- *
@@ -39,7 +42,9 @@ public class Server
   @param (String [])
   @return 
   **********************************************************************************************************/
- public static void main(String[] args) throws IOException {
+ public static void main(String[] args) throws IOException 
+ 
+  {
         Server server = new Server();
   }
 }
