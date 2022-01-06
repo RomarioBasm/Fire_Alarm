@@ -52,7 +52,7 @@ public class ClientHandler extends Thread {
                     ll.appendNode(newNode);                                                                     // adding new node (fire event) to the list of events history
                 } else if (request.equals("2")) {
                     System.out.println("There is a request to display the history.  ");																// test for debuging info.
-                    ll.setRecordFileDirectory("C:\\Users\\sara\\Downloads\\project\\files\\history.txt");		// accessing & write in the file 'History.txt' on the pc harddisk that include all fire events records 
+                    ll.setRecordFileDirectory("History.txt");		// accessing & write in the file 'History.txt' on the pc harddisk that include all fire events records 
                     ll.recordData();																				// save recorded data in the file 'History.txt' on the pc harddisk that include all fire events records 
                     ll.openHistory();																			// show history on UI in a txt opened from harddisk
                 }
