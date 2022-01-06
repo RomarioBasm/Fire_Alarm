@@ -23,12 +23,12 @@ public class SerialProtocol {
     public void arduinoConnection() {
         Vector<String> portList = new Vector<String>();
         SerialPort[] portNames = SerialPort.getCommPorts();
-        String comPort = "COM3";
-//                for (int i = 0; i < portNames.length; i++) {
-//                    portList.add(portNames[i].getSystemPortName());
-//                    System.out.println(i + "- " + portNames[i].getSystemPortName());
-//                    comPort = portNames[i].getSystemPortName();
-//                }
+        String comPort = "";
+                for (int i = 0; i < portNames.length; i++) {
+                    portList.add(portNames[i].getSystemPortName());
+                    System.out.println(i + "- " + portNames[i].getSystemPortName());
+                    comPort = portNames[i].getSystemPortName();
+                }
         port = SerialPort.getCommPort(comPort);
         port.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         in = new Scanner(port.getInputStream());
