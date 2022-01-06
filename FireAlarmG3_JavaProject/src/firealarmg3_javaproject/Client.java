@@ -11,7 +11,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import fire.occurence.FireOccurence;
 
 public class Client{ 
 
@@ -24,7 +23,7 @@ public class Client{
     /************************** Client  *****************************
     * constructor of the class that create a new socket of the -----*
     * connection between the server and the client, and new input --*
-    * and new output stream to send and recevie the data -----------*
+    * and new output stream to send and receive the data -----------*
     * @param                                                        *
     * @return                                                       *
     ****************************************************************/                                                                                                                                          
@@ -47,19 +46,29 @@ public class Client{
     
     
     /************************** start  ******************************
-    * This method is called to send a data from the client to the --*
-    * server--------------------------------------------------------*
+    * This method is called to run a thread that polling to get ----*
+    * the toggle in the flag of the fire, to send a request to the--*
+    * server -------------------------------------------------------*
     * @param                                                        *
     * @return                                                       *
     ****************************************************************/
-    public void start(){ 
-        
-         if(fire.toggle == true){
-            System.out.println("client condition ");
-            this.setData("1");
-            fire.toggle = false;
-         }
-         
+    public void start(){
+        new Thread(new Runnable(){
+            @Override
+             public void run(){
+
+                 while(true){
+
+                        if(fire.toggle == true){
+
+                            System.out.println("client condition ");
+                            setData("1");
+                            fire.toggle = false;
+                        }                 
+                 }
+             }
+         }).start();
+
     }
 
 }

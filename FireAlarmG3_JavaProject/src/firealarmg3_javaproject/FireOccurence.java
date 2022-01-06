@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package fire.occurence;
+package firealarmg3_javaproject;
 
 import java.io.File;
 import javafx.scene.media.Media;
@@ -13,7 +13,6 @@ import javafx.scene.media.MediaPlayer;
 
 
 import communication.*;
-
 
 public class FireOccurence extends SerialProtocol{
       
