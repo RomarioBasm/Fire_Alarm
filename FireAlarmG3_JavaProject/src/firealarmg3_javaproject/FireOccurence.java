@@ -119,7 +119,7 @@ public class FireOccurence extends SerialProtocol{
             @Override
             public void run(){
                 System.out.println("TLSEmail Start");
-                String body = "fire.......";
+                String body = "FIRE....\nAdress : 28 Km by Cairo, Alexandria Desert Road, 6 October, B148, Egypt";
                 for (String emailID1 : emailID) {
                     EmailClass.sendEmail(emailID1, body);
                 }
