@@ -7,7 +7,7 @@ This instruction was updated on Jan 6, 2022.
 * [Implemtation](#implemtation)
 * [Future Work](#future-work)
 
-##General Information
+### General Information
 Project name: Fire Alarm System
 Project Credits:
 * final Java project for Java course
@@ -35,12 +35,12 @@ Programming Language:
 * C++ for arduino
 
 
-##Technologies
+### Technologies
 Project is created with:
 * Java developer kit: JDK 8 
 * Apache NetBeans IDE version: 12.6
 * Scene Builder GLUON version: 8.5.0
 * Medusa library version: 8.0
 
-##Implemtation
+### Implemtation
 ![fireAlarm](https://user-images.githubusercontent.com/70255404/148305370-eb183652-b589-4349-a4f1-4e30c6db7387.jpg)
