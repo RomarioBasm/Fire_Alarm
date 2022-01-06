@@ -1,6 +1,11 @@
 
 package communication;
 
+import com.fazecast.jSerialComm.SerialPort;
+import java.io.OutputStream;
+import java.util.Scanner;
+import java.util.Vector;
+
 public class SerialProtocol {
     
     Scanner in;              // an in stream of bytes. accepts input bytes.

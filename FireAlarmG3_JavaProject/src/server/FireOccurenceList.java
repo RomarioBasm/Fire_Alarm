@@ -105,21 +105,28 @@ public class FireOccurenceList {
 
     public void recordData() throws IOException{
     	FileWriter writer=new FileWriter(recordFileDirectory);
-    	String recordfileContents="";        
+    	String recordfileContents=""; 
+        String fireIdStr="";       
         FireOccurenceNode node=head;
         if(node==null){
             System.out.println("no fires occured");
+                recordfileContents= recordfileContents.concat("no fires occured");
+            writer.write(recordfileContents);
+           writer.close();
+            return;
         }
 
        while(node.nextFireOccurence !=null){
-            recordfileContents.concat("fireID:"+node.getFireId()+"\t fireDate:"+
+           recordfileContents= recordfileContents.concat("fireID:"+fireIdStr.valueOf(node.getFireId())+"\t fireDate:"+
             node.getFireOccurenceDate()+"\t fireTime:"+
-            node.getFireOccurenceTime());
+            node.getFireOccurenceTime()+"\n");
             node=node.nextFireOccurence;
 
         }
-        recordfileContents.concat("fireID:"+node.getFireId()+"\t fireDate:"+
-        node.getFireOccurenceDate()+"\t fireTime:"+node.getFireOccurenceTime());
+        System.out.println("entered first node");
+        recordfileContents=recordfileContents.concat("fireID:"+fireIdStr.valueOf(node.getFireId())+"\t fireDate:"+
+            node.getFireOccurenceDate()+"\t fireTime:"+
+            node.getFireOccurenceTime()+"\n");
         writer.write(recordfileContents);
         writer.close();
 
