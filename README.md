@@ -9,12 +9,10 @@ Authors & contributers:
    \\Romario Bassem
    \\Sara Adel
 
-----------------------------
-Video Submission download : https://drive.google.com/drive/folders/1yKQvS4skvKgBBO4Z1lEtk1ghU5QCS62-
------------------------------
 
 ## Table of contents
 * [video Submission](#video-submission)
+* [documentation Submission](#documentation-submission)
 * [General Information](#general-information)
 * [Technologies](#technologies)
 * [Implemtation](#implemtation)
@@ -23,6 +21,10 @@ Video Submission download : https://drive.google.com/drive/folders/1yKQvS4skvKgB
 ### video Submission
 <br /> google drive link:
 https://drive.google.com/drive/folders/1yKQvS4skvKgBBO4Z1lEtk1ghU5QCS62-
+
+### documentation Submission
+<br /> google docs link:
+https://docs.google.com/document/d/1sMRclI51AV_U3ygjXVZddkFAkhpE1qVpf2EEzbOidgg/edit?usp=sharing
 
 ### General Information
 <br />Project name: Fire Alarm System
