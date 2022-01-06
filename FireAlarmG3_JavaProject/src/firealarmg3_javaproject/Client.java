@@ -55,13 +55,16 @@ public class Client{
              public void run(){
 
                  while(true){
-
+                    try{ Thread.sleep(1000);
                         if(fire.toggle == true){
 
                             System.out.println("client condition ");
                             setData("1");
                             fire.toggle = false;
-                        }                 
+                        }
+                    } catch (InterruptedException ex) {                 
+                         
+                    }                 
                  }
              }
          }).start();
