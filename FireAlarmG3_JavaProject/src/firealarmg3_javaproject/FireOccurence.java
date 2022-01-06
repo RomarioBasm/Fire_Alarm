@@ -26,7 +26,7 @@ public class FireOccurence extends SerialProtocol{
     * constructor that open a new file for the media player file----*
     ****************************************************************/
     FireOccurence(){
-        f = new File("C:\\Users\\sara\\Downloads\\project\\files\\peep.mp3"); 
+        f = new File("alert.mpeg"); 
         media = new Media(f.toURI().toString());                                    
         mplayer = new MediaPlayer(media);
     }
