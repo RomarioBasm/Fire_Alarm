@@ -21,7 +21,6 @@ public class FireAlarmG3_JavaProject extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene scene = new Scene(root);
-        stage.getIcons().add(new Image("C:\\Users\\sara\\Downloads\\project\\FireAlarmG3_JavaProject\\src\\firealarmg3_javaproject\\logo.jpg"));
         stage.setTitle("FireAlarm");
         stage.setScene(scene);
         stage.show();
