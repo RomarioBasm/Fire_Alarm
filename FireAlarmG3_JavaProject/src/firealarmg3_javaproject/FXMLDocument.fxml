@@ -5,9 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -17,30 +15,29 @@
          <content>
             <AnchorPane id="AnchorPane" fx:id="A1" prefHeight="579.0" prefWidth="869.0" styleClass="AnchorPane" stylesheets="@FireAlarmG3_JavaProject.css">
                <children>
-                  <Gauge id="thermometer" fx:id="thermometer" alert="true" alertMessage="WARNING !!" animated="true" areaTextVisible="true" backgroundPaint="WHITE" borderPaint="#90818100" foregroundPaint="#47313100" gradientBarEnabled="true" layoutX="307.0" layoutY="129.0" lcdDesign="BLACK" lcdFont="LCD" ledVisible="true" mediumTickMarkType="PILL" prefHeight="258.0" prefWidth="255.0" styleClass="thermometer" threshold="25.0" thresholdColor="#ff0000" thresholdVisible="true" title="Temperature" unit="  ̊C" />
-                  <Text fill="#ff0505" layoutX="21.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fire Alarm" wrappingWidth="185.388671875">
+                  <Gauge id="thermometer" fx:id="thermometer" alert="true" alertMessage="WARNING !!" animated="true" areaTextVisible="true" backgroundPaint="WHITE" borderPaint="#90818100" foregroundPaint="#47313100" gradientBarEnabled="true" layoutX="307.0" layoutY="129.0" lcdDesign="BLACK" lcdFont="LCD" ledVisible="true" maxValue="30.0" mediumTickMarkType="PILL" prefHeight="258.0" prefWidth="255.0" styleClass="thermometer" threshold="25.0" thresholdColor="#ff0000" thresholdVisible="true" title="Temperature" unit="  ̊C" />
+                  <Text fill="#83746e" layoutX="14.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fire Alarm System" wrappingWidth="336.388671875">
                      <font>
                         <Font name="Arial" size="40.0" />
                      </font>
                   </Text>
-                  <VBox layoutX="150.0" layoutY="319.0" prefHeight="247.0" prefWidth="157.0" />
-                  <Button id="help" fx:id="help" layoutX="670.0" layoutY="407.0" mnemonicParsing="false" onAction="#handleHelpAction" prefHeight="71.0" prefWidth="165.0" styleClass="help" stylesheets="@FireAlarmG3_JavaProject.css" text="HELP" textFill="WHITE">
+                  <Button id="history" fx:id="history" layoutX="676.0" layoutY="31.0" mnemonicParsing="false" onAction="#handleButtonHistory" prefHeight="50.0" prefWidth="143.0" styleClass="history" stylesheets="@FireAlarmG3_JavaProject.css" text="HISTORY" textFill="WHITE">
                      <font>
-                        <Font name="Calibri Bold" size="30.0" />
+                        <Font name="Calibri Bold" size="18.0" />
                      </font>
-                     <effect>
-                        <Glow level="1.0" />
-                     </effect>
-                  </Button>
-                  <Button id="history" fx:id="history" layoutX="670.0" layoutY="485.0" mnemonicParsing="false" onAction="#handleHistoryAction" styleClass="history" stylesheets="@FireAlarmG3_JavaProject.css" text="HISTORY" textFill="WHITE">
-                     <font>
-                        <Font name="Calibri Bold" size="30.0" />
-                     </font>
-                     <effect>
-                        <Glow level="1.0" />
-                     </effect>
                   </Button>
                   <Label fx:id="label" layoutX="629.0" layoutY="311.0" prefHeight="37.0" prefWidth="140.0" textFill="#fcfcfc" />
+                  <Button id="stop" fx:id="stop" layoutX="637.0" layoutY="476.0" mnemonicParsing="false" onAction="#handleButtonStop" prefHeight="71.0" prefWidth="182.0" styleClass="stop" stylesheets="@FireAlarmG3_JavaProject.css" text="STOP" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="30.0" />
+                     </font>
+                  </Button>
+                  <Button id="help" fx:id="help" layoutX="41.0" layoutY="476.0" mnemonicParsing="false" onAction="#handleButtonHelp" prefHeight="71.0" prefWidth="182.0" styleClass="help" stylesheets="@FireAlarmG3_JavaProject.css" text="HELP" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="30.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane id="Alert" fx:id="Alert" layoutX="-2.0" layoutY="-3.0" prefHeight="469.0" prefWidth="855.0" styleClass="Alert" stylesheets="@FireAlarmG3_JavaProject.css" visible="false" />
                </children>
             </AnchorPane>
          </content>

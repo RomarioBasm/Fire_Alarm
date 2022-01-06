@@ -5,6 +5,7 @@
 package firealarmg3_javaproject;
 
 import eu.hansolo.medusa.Gauge;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -15,65 +16,79 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
+import communication.SerialProtocol;
+import firealarmg3_javaproject.Client;
 
-/**
- *
- * @author Romario
- */
+
 public class FXMLDocumentController implements Initializable {
     
-  
-    @FXML
-    private Gauge thermometer;
-    @FXML
-    private Button help;
-    @FXML
-    private Button history;
+    Client client =  new Client();
+    boolean flag=true;
+    
+    public FXMLDocumentController() throws IOException {  
+    }
     @FXML
     private Label label;
     @FXML
-    private AnchorPane A2;
+    private Gauge thermometer;
+    @FXML
+    private AnchorPane Alert;
     
     @FXML
-    private AnchorPane A1;
-    @FXML
-    private Tab tab1;
-    
-    @FXML
-    private Tab tab2;
-    @FXML
-    private TabPane tabpane;
-
-    
-    
-   
-    
-
-    private void handleButtonAction(ActionEvent event) {
-       
-        thermometer.setValue(60.00);
-        
+    private void handleButtonHelp(ActionEvent event) {
+        client.fire.stop();
     }
     @FXML
-    private void handleHelpAction(ActionEvent event) {
-       
-        thermometer.setValue(60.00);
+    private void handleButtonStop(ActionEvent event) {
         
+        Alert.setVisible(false);
+        client.fire.stop();
+        System.out.println("STOP IS CLICKED");
+       
     }
     @FXML
-    private void handleHistoryAction(ActionEvent event) {
-       
- 
-        this.tabpane.getSelectionModel().select(this.tab2);
-        thermometer.setValue(30.00);
-        
+    private void handleButtonHistory(ActionEvent event) {
+      client.ps.println("2");
+      
+           
     }
-    
-    
-
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
+       
+        SerialProtocol newConnection = new SerialProtocol();
+        newConnection.arduinoConnection();
+        newConnection.receive();
+         client.start();
+        
+             Thread t3 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+               while(true){
+                     System.out.println("entered thread 2");
+                 try {
+                    Thread.sleep(1000);
+                    client.fire.fireOccurence();
+                    thermometer.setValue(client.fire.getTemp());
+                    if(client.fire.getTemp()>25 && flag==true){
+                         Alert.setVisible(true);
+                         flag=false;
+                    }else if(client.fire.getTemp()<25 && flag==false){
+                        flag=true;
+                    }
+
+                } catch (InterruptedException e) {}
+            }
+        }
+            
+            
+        });
+        t3.start();
+        
+    
+
+   
     }    
     
 }

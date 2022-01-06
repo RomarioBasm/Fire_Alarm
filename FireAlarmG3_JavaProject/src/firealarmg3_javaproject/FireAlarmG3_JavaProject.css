@@ -4,7 +4,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 */
 /* 
     Created on : Jan 1, 2022, 3:48:28 PM
-    Author     : Romario
+    Author     : Donia 
 */
 
 .help
@@ -61,7 +61,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 .history:pressed
 {
-      -fx-border-color: darkorange;
+      -fx-border-color: yellow;
       -fx-border-radius:  50 50 50 50;
       -fx-border-style: solid ;
       -fx-border-width: 8;
@@ -69,10 +69,36 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
       -fx-background-radius: 50 50 50 50; 
       -fx-background-size: stretch;
 }
+
 .AnchorPane{
-    -fx-background-color: black;
+  
+  
+    -fx-background-image:url('fire3.jpg');
     -fx-background-size: stretch;
 }
-.history_tab{
-    -fx-display: none;
+.stop
+{
+      -fx-border-color:  red;
+      -fx-border-radius:  50 50 50 50;
+      -fx-border-style: solid ;
+      -fx-border-width: 8;
+      -fx-background-color:  transparent;
+      -fx-background-radius: 50 50 50 50; 
+      -fx-background-size: auto ;
+}
+.stop:pressed
+{
+      -fx-border-color: yellow;
+      -fx-border-radius:  50 50 50 50;
+      -fx-border-style: solid ;
+      -fx-border-width: 8;
+      -fx-background-color:  transparent;
+      -fx-background-radius: 50 50 50 50; 
+      -fx-background-size: stretch;
+}
+.Alert{
+    
+    -fx-background-image:url('alert.gif');
+    
+    -fx-background-size: stretch;
 }
