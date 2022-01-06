@@ -10,7 +10,7 @@ public class SerialProtocol {
     
     Scanner in;              // an in stream of bytes. accepts input bytes.
     OutputStream out;        // an output stream of bytes. accepts bytes and sends them to the hardware. 
-    static int temper;       // int variable that represent the 
+    protected static int temper;       // int variable that represent the 
     static SerialPort port;  // serialPort, that represent the port.
     
     
