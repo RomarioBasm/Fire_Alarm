@@ -9,7 +9,7 @@ This instruction was updated on Jan 6, 2022.
 
 ### General Information
 Project name: Fire Alarm System
-Project Credits:
+<br /> Project Credits:
 * final Java project for Java course
 * Embedded Systems Department in ITI-Information Technology Inistitute- smart village internship Intake42
 * supervised by :
