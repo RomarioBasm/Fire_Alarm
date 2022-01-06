@@ -2,10 +2,14 @@
 This instruction was updated on Jan 6, 2022.
 
 ## Table of contents
+* [video Submission](#video-submission)
 * [General Information](#general-information)
 * [Technologies](#technologies)
 * [Implemtation](#implemtation)
 * [Future Work](#future-work)
+
+#video-submission
+https://drive.google.com/drive/folders/1yKQvS4skvKgBBO4Z1lEtk1ghU5QCS62-
 
 ### General Information
 <br />Project name: Fire Alarm System
@@ -43,5 +47,19 @@ This instruction was updated on Jan 6, 2022.
 * Medusa library version: 8.0
 
 ### Implemtation
-<br /> Architecture:
+<br /> Architecture UML class diagram:
 ![fireAlarm](https://user-images.githubusercontent.com/70255404/148305370-eb183652-b589-4349-a4f1-4e30c6db7387.jpg)
+
+<br /> Architecture Explanation:
+
+* communication package
+    * Email class: responsible for sending mails 
+    * SerialProtocol class: resonisble for connection with ports (arduino board port in our application)
+* fire.alarm package (main package)
+* server package
+
+
+### Future Work
+<br /> Srever send data to client:
+<br /> This will enable us to display the fire history in another tab in the same UI 
+<br /> instead of poping up a text file window containing the history
