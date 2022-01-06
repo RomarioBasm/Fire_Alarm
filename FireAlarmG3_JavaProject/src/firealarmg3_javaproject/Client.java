@@ -1,8 +1,6 @@
 
 package firealarmg3_javaproject;
 
-package firealarmm;
-
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -18,7 +16,6 @@ public class Client{
     DataInputStream dis;                       // an in stream of bytes. accepts input bytes.
     PrintStream ps;                            // an output stream of bytes. accepts bytes and sends them to the hardware. 
     FireOccurence fire = new FireOccurence();  // an object from fire occurenece class, contains all the action.
-
 
     /************************** Client  *****************************
     * constructor of the class that create a new socket of the -----*
