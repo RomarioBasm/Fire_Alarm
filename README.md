@@ -1,19 +1,17 @@
-FIRE ALARM PROJECT
+# FIRE ALARM PROJECT GROUP 3
 
+This instruction was updated on Jan 6, 2022.
 ************************
 Authors & contributers:
- Dounia khaled
- Hager Mohamed
- Mahmoud Dahroug
- Romario Bassem
- Sara Adel
+   Dounia khaled
+   \\Hager Mohamed
+   \\Mahmoud Dahroug
+   \\Romario Bassem
+   \\Sara Adel
 
 ----------------------------
 Video Submission download : https://drive.google.com/drive/folders/1yKQvS4skvKgBBO4Z1lEtk1ghU5QCS62-
 -----------------------------
-
-# fireAlarmGroup3
-This instruction was updated on Jan 6, 2022.
 
 ## Table of contents
 * [video Submission](#video-submission)
@@ -28,11 +26,12 @@ https://drive.google.com/drive/folders/1yKQvS4skvKgBBO4Z1lEtk1ghU5QCS62-
 
 ### General Information
 <br />Project name: Fire Alarm System
+
 <br /> Project Credits:
 * final Java project for Java course
 * Embedded Systems Department in ITI-Information Technology Inistitute- smart village internship Intake42
 * supervised by :
-    * Eng.Eman 
+    * Eng.Eman Hesham
     * Eng. Ahmed El-Ashmawy
 * done by:
     * Dounia khaled
@@ -40,6 +39,7 @@ https://drive.google.com/drive/folders/1yKQvS4skvKgBBO4Z1lEtk1ghU5QCS62-
     * Mahmoud Dahroug
     * Romario Bassem
     * Sara Adel
+
 <br />Project description: 
 * UI to show the current temprature through a guage 
 * fires an alarm (sound - light - warning sign in the UI) when a fire occures
@@ -49,7 +49,8 @@ https://drive.google.com/drive/folders/1yKQvS4skvKgBBO4Z1lEtk1ghU5QCS62-
     * fire ID: the number of fire since operation
     * fire date: day/month/year
     * fire time: hours:miniutes:seconds  am/pm
-<br />Programming Language: 
+ 
+<br/>Programming Language: 
 * Java for application
 * C++ for arduino
 
@@ -69,10 +70,21 @@ https://drive.google.com/drive/folders/1yKQvS4skvKgBBO4Z1lEtk1ghU5QCS62-
 
 * communication package
     * Email class: responsible for sending mails 
-    * SerialProtocol class: resonisble for connection with ports (arduino board port in our application)
+    * SerialProtocol class: responisble for connection with ports (arduino board port in our application)
 * fire.alarm package (main package)
-* server package
+    * FireOccurence: contain our main functionality to check fire condition and take actions towards the fire
+    * Client class: communicates with the server through two requests,
+    <br /> these requests either tell server to record a fire or tell it show the recorded fires history 
+    * FXML Controller class:contains  the client thread and the main thread responsible for checking fire 
+    <br/>and also the FXML objects handlers
+    * FireAlarm class:contains the main method responsible for launching the GUI
 
+* server package
+    * FireOccurenceNode class: a customized node class for fire, each node represent the fire occurence data 
+    <br /> which are the fire temp, date and time of occurence, the fire record number and total number of fires occured
+    * FireOccurenceList class: a customized list class where its nodes are the fire occurence nodes  
+    * ClientHandler class: responsible for checking the requests from the client and take actions towards it
+    * Server class: waits for client requests
 
 ### Future Work
 <br /> Srever send data to client:
