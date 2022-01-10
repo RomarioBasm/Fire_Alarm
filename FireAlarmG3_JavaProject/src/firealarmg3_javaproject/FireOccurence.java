@@ -47,7 +47,7 @@ public class FireOccurence extends SerialProtocol{
             fireFlag = true;
             toggle = true;
             
-            sendAlert();                 //send an email to the client.
+            //sendAlert();                 //send an email to the client.
             playSound();                 //play a software sound.
             fireLedBuzzer();             //send a signal to the hardware.                           
         }

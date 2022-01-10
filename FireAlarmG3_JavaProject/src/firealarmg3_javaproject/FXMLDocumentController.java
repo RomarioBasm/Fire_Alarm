@@ -36,7 +36,7 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void handleButtonHelp(ActionEvent event) {
-        client.fire.stop();
+        client.fire.sendAlert();
     }
     @FXML
     private void handleButtonStop(ActionEvent event) {
